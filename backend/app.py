@@ -149,7 +149,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(
 
 db.init_app(app)
 allowed_origins = [o.strip() for o in os.getenv('FRONTEND_URL', 'http://localhost:5173').split(',') if o.strip()]
-CORS(app, supports_credentials=True, origins=allowed_origins)
+CORS(app, supports_credentials=True, origins=["*"])
 jwt = JWTManager(app)
 
 with app.app_context():
