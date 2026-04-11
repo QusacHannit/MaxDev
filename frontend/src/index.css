@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   Global dark theme for public / client / freelancer areas.
+   Админская панель не использует этот режим — у неё уже есть собственный тёмный стиль.
+   -------------------------------------------------------------------------- */
+
+.theme-dark {
+  color-scheme: dark;
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+.theme-dark .bg-slate-50,
+.theme-dark.bg-slate-50 {
+  background-color: #020617 !important;
+}
+
+.theme-dark .bg-white,
+.theme-dark .bg-white\/80,
+.theme-dark .bg-white\/90,
+.theme-dark .bg-white\/95,
+.theme-dark .from-white,
+.theme-dark .to-white,
+.theme-dark .via-white {
+  background-color: #0f172a !important;
+}
+
+.theme-dark .bg-slate-100,
+.theme-dark .bg-slate-200,
+.theme-dark .bg-violet-50,
+.theme-dark .bg-indigo-50,
+.theme-dark .bg-blue-50,
+.theme-dark .bg-emerald-50,
+.theme-dark .bg-amber-50,
+.theme-dark .bg-red-50,
+.theme-dark .bg-purple-50,
+.theme-dark .bg-cyan-50 {
+  background-color: #111827 !important;
+}
+
+.theme-dark .from-violet-50,
+.theme-dark .from-indigo-50,
+.theme-dark .from-slate-50,
+.theme-dark .from-blue-50,
+.theme-dark .from-emerald-50,
+.theme-dark .from-amber-50 {
+  --tw-gradient-from: #0f172a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position) !important;
+}
+
+.theme-dark .via-violet-50,
+.theme-dark .via-white,
+.theme-dark .via-indigo-50,
+.theme-dark .via-slate-50 {
+  --tw-gradient-stops: var(--tw-gradient-from), #111827 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+.theme-dark .to-violet-50,
+.theme-dark .to-indigo-50,
+.theme-dark .to-slate-50,
+.theme-dark .to-blue-50,
+.theme-dark .to-emerald-50,
+.theme-dark .to-amber-50,
+.theme-dark .to-white {
+  --tw-gradient-to: #111827 var(--tw-gradient-to-position) !important;
+}
+
+.theme-dark .border-slate-50,
+.theme-dark .border-slate-100,
+.theme-dark .border-slate-200,
+.theme-dark .border-slate-300,
+.theme-dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155 !important;
+}
+
+.theme-dark .text-slate-900,
+.theme-dark .text-slate-800,
+.theme-dark .text-slate-700 {
+  color: #f8fafc !important;
+}
+
+.theme-dark .text-slate-600,
+.theme-dark .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.theme-dark .text-slate-400,
+.theme-dark .text-slate-300 {
+  color: #94a3b8 !important;
+}
+
+.theme-dark .placeholder-slate-400::placeholder,
+.theme-dark .placeholder-slate-500::placeholder {
+  color: #64748b !important;
+}
+
+.theme-dark .shadow-sm,
+.theme-dark .shadow-md,
+.theme-dark .shadow-lg,
+.theme-dark .shadow-xl,
+.theme-dark .shadow-2xl {
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45) !important;
+}
+
+.theme-dark .hover\:bg-slate-50:hover,
+.theme-dark .hover\:bg-slate-100:hover {
+  background-color: #1e293b !important;
+}
+
+.theme-dark .hover\:bg-violet-50:hover {
+  background-color: rgba(124, 58, 237, 0.15) !important;
+}
+
+.theme-dark .hover\:bg-red-50:hover {
+  background-color: rgba(239, 68, 68, 0.12) !important;
+}
+
+.theme-dark .hover\:text-slate-700:hover,
+.theme-dark .hover\:text-slate-900:hover {
+  color: #ffffff !important;
+}
+
+.theme-dark input:not([type='range']):not([type='checkbox']):not([type='radio']):not([type='file']),
+.theme-dark textarea,
+.theme-dark select {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.theme-dark input:disabled,
+.theme-dark textarea:disabled,
+.theme-dark select:disabled {
+  background-color: #0b1120 !important;
+}
+
+.theme-dark .backdrop-blur-xl.bg-white\/80,
+.theme-dark .backdrop-blur-xl.bg-white\/90 {
+  background-color: rgba(15, 23, 42, 0.88) !important;
+}
+
+.theme-dark .prose,
+.theme-dark p,
+.theme-dark li,
+.theme-dark span,
+.theme-dark label,
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4 {
+  border-color: inherit;
+}
+
+.theme-dark ::selection {
+  background: rgba(124, 58, 237, 0.45);
+  color: #ffffff;
+}
