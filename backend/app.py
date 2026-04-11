@@ -79,11 +79,10 @@ def send_email(to: str, subject: str, html: str) -> bool:
                     server.ehlo()
                 server.login(SMTP_USER, SMTP_PASSWORD)
                 server.sendmail(envelope_from, [to], msg.as_string())
-
         print(f'[EMAIL OK] {subject} -> {to}')
         return True
     except Exception as e:
-        print(f'[EMAIL ERROR] {e}')
+        print(f'[EMAIL ERROR] {e}')  # Эта строка уже есть, но убедитесь, что она печатает полную ошибку
         return False
 
 def generate_code() -> str:
