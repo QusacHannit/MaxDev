@@ -134,11 +134,7 @@ const ClientHome: React.FC = () => {
               return (
                 <Card key={r.id} className="!p-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <img
-                      src={freelancer?.avatar}
-                      alt={freelancer?.name}
-                      className="w-7 h-7 rounded-full"
-                    />
+                <Avatar alt={freelancer?.name || 'Пользователь'} role={freelancer?.role} size="sm" className="!w-7 !h-7 !text-[11px] !ring-1 !ring-white shadow-sm" />
                     <span className="text-sm font-semibold text-slate-900">{freelancer?.name}</span>
                     <StarRating rating={r.rating} size={12} className="ml-auto" />
                   </div>
@@ -251,11 +247,7 @@ const FreelancerHome: React.FC = () => {
           <Card>
             <h3 className="font-bold text-slate-900 mb-3">Профиль</h3>
             <div className="flex items-center gap-3 mb-4">
-              <img
-                src={currentUser?.avatar}
-                alt={currentUser?.name}
-                className="w-14 h-14 rounded-full border-2 border-violet-200"
-              />
+              <Avatar alt={currentUser?.name || 'Пользователь'} role={currentUser?.role} size="lg" className="!w-14 !h-14 !rounded-full !text-xl ring-2 ring-violet-200" />
               <div>
                 <p className="font-semibold text-slate-900">{currentUser?.name}</p>
                 <StarRating rating={currentUser?.rating || 0} size={14} />

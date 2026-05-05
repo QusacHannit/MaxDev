@@ -79,10 +79,11 @@ def send_email(to: str, subject: str, html: str) -> bool:
                     server.ehlo()
                 server.login(SMTP_USER, SMTP_PASSWORD)
                 server.sendmail(envelope_from, [to], msg.as_string())
+
         print(f'[EMAIL OK] {subject} -> {to}')
         return True
     except Exception as e:
-        print(f'[EMAIL ERROR] {e}')  # Эта строка уже есть, но убедитесь, что она печатает полную ошибку
+        print(f'[EMAIL ERROR] {e}')
         return False
 
 def generate_code() -> str:
@@ -148,7 +149,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(
 
 db.init_app(app)
 allowed_origins = [o.strip() for o in os.getenv('FRONTEND_URL', 'http://localhost:5173').split(',') if o.strip()]
-CORS(app, supports_credentials=True, origins=["*"])
+CORS(app, supports_credentials=True, origins=allowed_origins)
 jwt = JWTManager(app)
 
 with app.app_context():

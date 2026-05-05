@@ -6,6 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 ENV/
 build/
 develop-eggs/
@@ -22,6 +23,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+instance/
+*.db
+*.sqlite3
+
 
 # Flask
 instance/
