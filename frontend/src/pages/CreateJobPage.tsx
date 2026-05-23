@@ -76,7 +76,6 @@ const CreateJobPage: React.FC = () => {
             <Input
               label="Заголовок заказа"
               placeholder="Например: Разработка лендинга на React"
-              icon={<Briefcase size={16} />}
               error={errors.title?.message}
               {...register('title', {
                 required: 'Заголовок обязателен',
@@ -100,7 +99,6 @@ const CreateJobPage: React.FC = () => {
                 label="Бюджет (₽)"
                 type="number"
                 placeholder="50000"
-                icon={<DollarSign size={16} />}
                 error={errors.budget?.message}
                 {...register('budget', {
                   required: 'Бюджет обязателен',
@@ -149,7 +147,7 @@ const CreateJobPage: React.FC = () => {
             {/* File attachment hint */}
             <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 border-dashed">
               <p className="text-sm text-slate-500 text-center">
-                📎 Прикрепление файлов (ТЗ, макеты) доступно после создания заказа в чате
+                Прикрепление файлов (ТЗ, макеты) доступно после создания заказа в чате
               </p>
             </div>
 

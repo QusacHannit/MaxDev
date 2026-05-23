@@ -199,14 +199,14 @@ const AdminPage: React.FC = () => {
               { label: 'Оборот платформы', value: `${totalRevenue.toLocaleString()} ₽`, icon: <DollarSign size={20} />, color: 'amber', sub: 'по завершённым' },
             ].map((stat, i) => (
               <div key={i} className="bg-gray-900 border border-gray-800 rounded-2xl p-5">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
+                {/*<div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
                   stat.color === 'violet' ? 'bg-violet-950 text-violet-400' :
                   stat.color === 'sky' ? 'bg-sky-950 text-sky-400' :
                   stat.color === 'emerald' ? 'bg-emerald-950 text-emerald-400' :
                   'bg-amber-950 text-amber-400'
                 }`}>
                   {stat.icon}
-                </div>
+                </div>*/}
                 <p className="text-2xl font-extrabold text-white font-mono">{stat.value}</p>
                 <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
                 <p className="text-xs text-gray-600 mt-0.5">{stat.sub}</p>
@@ -217,7 +217,7 @@ const AdminPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
               <h3 className="font-bold text-green-400 font-mono mb-5 flex items-center gap-2">
-                <TrendingUp size={18} />
+                {/*<TrendingUp size={18} />*/}
                 Распределение заказов по статусу
               </h3>
               <div className="space-y-3">
@@ -250,7 +250,7 @@ const AdminPage: React.FC = () => {
 
             <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
               <h3 className="font-bold text-green-400 font-mono mb-5 flex items-center gap-2">
-                <Users size={18} />
+                {/*<Users size={18} />*/}
                 Пользователи по роли
               </h3>
               <div className="space-y-4">
@@ -508,14 +508,14 @@ const AdminPage: React.FC = () => {
                           onClick={() => { resolveComplaint(c.id); }}
                           className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-emerald-400 bg-emerald-950/50 rounded-lg hover:bg-emerald-900/50 transition-colors"
                         >
-                          <CheckCircle size={13} />
+                          {/*<CheckCircle size={13} />*/}
                           Решить
                         </button>
                         <button
                           onClick={() => { dismissComplaint(c.id); }}
                           className="flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-400 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors"
                         >
-                          <XCircle size={13} />
+                          {/*<XCircle size={13} />*/}
                           Отклонить
                         </button>
                       </div>
@@ -546,18 +546,18 @@ const AdminPage: React.FC = () => {
 
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
             <h3 className="font-bold text-green-400 font-mono mb-1 flex items-center gap-2">
-              <HardDrive size={18} />
+              {/*<HardDrive size={18} />*/}
               Управление базой данных
             </h3>
             <p className="text-sm text-gray-600 mb-6 font-mono">Данные хранятся в серверной SQLite базе данных</p>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
               {[
-                { label: 'Пользователи', value: users.length, icon: '👤' },
-                { label: 'Заказы', value: jobs.length, icon: '📋' },
-                { label: 'Сообщения', value: messages.length, icon: '💬' },
-                { label: 'Отзывы', value: reviews.length, icon: '⭐' },
-                { label: 'Жалобы', value: complaints.length, icon: '🚩' },
+                { label: 'Пользователи', value: users.length, icon: '' },
+                { label: 'Заказы', value: jobs.length, icon: '' },
+                { label: 'Сообщения', value: messages.length, icon: '' },
+                { label: 'Отзывы', value: reviews.length, icon: '' },
+                { label: 'Жалобы', value: complaints.length, icon: '' },
               ].map(item => (
                 <div key={item.label} className={`${
                   item.label === 'Пользователи' ? 'bg-violet-950/30 text-violet-400 border-violet-900/40' :

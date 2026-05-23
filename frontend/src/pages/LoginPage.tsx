@@ -60,12 +60,15 @@ const LoginPage: React.FC = () => {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 group">
+            {/*
             <div className="w-12 h-12 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
               <Code2 size={24} className="text-white" />
             </div>
+            
             <span className="text-2xl font-extrabold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
               MaxDev
             </span>
+            */}
           </Link>
           <h1 className="mt-6 text-3xl font-extrabold text-slate-900">Добро пожаловать</h1>
           <p className="mt-2 text-slate-500">Войдите в свой аккаунт</p>

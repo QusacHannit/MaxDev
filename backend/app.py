@@ -1,5 +1,5 @@
 """
-MaxDev Platform - Flask Backend (исправленная версия)
+Flask Backend
 """
 from flask import Flask, jsonify, request, send_file, send_from_directory
 from flask_cors import CORS
@@ -34,22 +34,10 @@ SMTP_PORT       = int(os.getenv('SMTP_PORT', 587))
 SMTP_USER       = os.getenv('SMTP_USER', '').strip()
 SMTP_PASSWORD   = os.getenv('SMTP_PASSWORD', '').strip()
 SMTP_FROM       = os.getenv('SMTP_FROM', SMTP_USER).strip() or SMTP_USER
-SMTP_USE_SSL    = os.getenv('SMTP_USE_SSL', 'auto').strip().lower()  # auto|true|false
-SMTP_USE_STARTTLS = os.getenv('SMTP_USE_STARTTLS', 'auto').strip().lower()  # auto|true|false
+SMTP_USE_SSL    = os.getenv('SMTP_USE_SSL', 'auto').strip().lower()
+SMTP_USE_STARTTLS = os.getenv('SMTP_USE_STARTTLS', 'auto').strip().lower()
 
 def send_email(to: str, subject: str, html: str) -> bool:
-    """
-    Отправка письма через реальный SMTP-сервер.
-
-    Поддержка:
-    - Gmail / Google Workspace
-    - Yandex 360
-    - Mail.ru
-    - любой SMTP с TLS/SSL
-
-    В dev-режиме, если SMTP не настроен, письмо печатается в консоль,
-    чтобы форма регистрации/сброса не ломалась во время локальной разработки.
-    """
     if not SMTP_USER or not SMTP_PASSWORD:
         print(f'\n[DEV EMAIL] To: {to}\nSubject: {subject}\n{html}\n')
         return True
@@ -120,9 +108,6 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # ── JWT секретный ключ ─────────────────────────────────────────────────────────
-# Берётся из переменной окружения JWT_SECRET_KEY.
-# Если переменная не задана — сервер НЕ запустится (raise RuntimeError).
-# Это защищает от случайного запуска в продакшне без настроенного .env.
 _jwt_secret = os.getenv('JWT_SECRET_KEY')
 if not _jwt_secret:
     raise RuntimeError(
@@ -190,7 +175,7 @@ def add_notification(user_id: int, title: str, message: str, type_: str = 'info'
         db.session.commit()
 
 
-# ------------------- YOOKASSA HELPERS -------------------
+# ------------------- YOOKASSA -------------------
 
 def get_yookassa_credentials():
     """Берём данные магазина из переменных окружения.

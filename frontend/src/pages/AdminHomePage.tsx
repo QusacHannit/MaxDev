@@ -135,15 +135,15 @@ const AdminHomePage: React.FC = () => {
               to="/admin"
               className="flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-400 text-black font-bold rounded-xl transition-all shadow-lg shadow-green-500/30 text-sm font-mono"
             >
-              <Terminal size={16} />
+              {/*<Terminal size={16} />*/}
               Панель управления
-              <ChevronRight size={16} />
+              {/*<ChevronRight size={16} />*/}
             </Link>
             <Link
               to="/admin-logs"
               className="flex items-center gap-2 px-6 py-3 border border-green-800 hover:border-green-600 text-green-400 hover:text-green-300 rounded-xl transition-all text-sm font-mono"
             >
-              <Activity size={16} />
+              {/*<Activity size={16} />*/}
               Журнал активности ({activityLogs.length})
             </Link>
           </div>
@@ -157,7 +157,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Пользователей',
             value: totalUsers,
             sub: `${blockedUsers} заблокировано`,
-            icon: <Users size={20} />,
+            //icon: <Users size={20} />,
             color: 'text-violet-400',
             bg: 'bg-violet-500/10 border-violet-800/40',
             dot: 'bg-violet-400',
@@ -166,7 +166,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Открытых заказов',
             value: openJobs,
             sub: `${activeJobs} в работе`,
-            icon: <Briefcase size={20} />,
+            //icon: <Briefcase size={20} />,
             color: 'text-sky-400',
             bg: 'bg-sky-500/10 border-sky-800/40',
             dot: 'bg-sky-400',
@@ -175,7 +175,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Оборот платформы',
             value: `${totalRevenue.toLocaleString()} ₽`,
             sub: 'завершённые проекты',
-            icon: <TrendingUp size={20} />,
+            //icon: <TrendingUp size={20} />,
             color: 'text-green-400',
             bg: 'bg-green-500/10 border-green-800/40',
             dot: 'bg-green-400',
@@ -184,7 +184,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Сообщений в системе',
               value: adminStats.messages,
             sub: 'приватные переписки',
-            icon: <Lock size={20} />,
+            //icon: <Lock size={20} />,
             color: 'text-amber-400',
             bg: 'bg-amber-500/10 border-amber-800/40',
             dot: 'bg-amber-400',
@@ -193,7 +193,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Жалобы',
             value: pendingComplaints,
             sub: `${complaints.length} всего`,
-            icon: <Flag size={20} />,
+            //icon: <Flag size={20} />,
             color: pendingComplaints > 0 ? 'text-red-400' : 'text-emerald-400',
             bg: pendingComplaints > 0 ? 'bg-red-500/10 border-red-800/40' : 'bg-emerald-500/10 border-emerald-800/40',
             dot: pendingComplaints > 0 ? 'bg-red-400' : 'bg-emerald-400',
@@ -202,7 +202,7 @@ const AdminHomePage: React.FC = () => {
             label: 'Всего заказов',
             value: jobs.length,
             sub: `${jobs.filter(j => j.status === 'paid').length} выполнено`,
-            icon: <Activity size={20} />,
+            //icon: <Activity size={20} />,
             color: 'text-pink-400',
             bg: 'bg-pink-500/10 border-pink-800/40',
             dot: 'bg-pink-400',
@@ -212,12 +212,12 @@ const AdminHomePage: React.FC = () => {
             key={stat.label}
             className={`${stat.bg} border rounded-2xl p-5 backdrop-blur-sm`}
           >
-            <div className="flex items-start justify-between mb-4">
+            {/*<div className="flex items-start justify-between mb-4">
               <div className={`w-10 h-10 rounded-xl bg-black/40 flex items-center justify-center ${stat.color}`}>
                 {stat.icon}
               </div>
               <Blinker color={stat.dot} />
-            </div>
+            </div>*/}
             <div className={`text-3xl font-black font-mono mb-1 ${stat.color}`}>
               {stat.value}
             </div>
@@ -232,7 +232,7 @@ const AdminHomePage: React.FC = () => {
         {/* System status */}
         <div className="bg-black/70 border border-green-900/40 rounded-2xl p-6 backdrop-blur-sm">
           <h2 className="text-green-400 font-bold font-mono mb-5 flex items-center gap-2">
-            <Server size={16} />
+            {/*<Server size={16} />*/}
             Состояние системы
           </h2>
           <div className="space-y-3">
@@ -260,7 +260,7 @@ const AdminHomePage: React.FC = () => {
         {/* Quick actions */}
         <div className="bg-black/70 border border-green-900/40 rounded-2xl p-6 backdrop-blur-sm">
           <h2 className="text-green-400 font-bold font-mono mb-5 flex items-center gap-2">
-            <Zap size={16} />
+            {/*<Zap size={16} />*/}
             Быстрые действия
           </h2>
           <div className="space-y-3">
@@ -297,7 +297,7 @@ const AdminHomePage: React.FC = () => {
       <div className="bg-black/70 border border-green-900/40 rounded-2xl p-6 backdrop-blur-sm">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-green-400 font-bold font-mono flex items-center gap-2">
-            <GitBranch size={16} />
+            {/*<GitBranch size={16} />*/}
             Последние события
           </h2>
           <Link
@@ -364,7 +364,7 @@ const AdminHomePage: React.FC = () => {
           <span>MaxDev Admin Console v1.2.0</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle size={12} className="text-green-700" />
+          {/*<CheckCircle size={12} className="text-green-700" />*/}
           <span>Все системы в норме</span>
         </div>
       </div>

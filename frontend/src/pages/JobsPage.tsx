@@ -141,7 +141,7 @@ const JobsPage: React.FC = () => {
 
           {paginated.length === 0 ? (
             <div className="text-center py-20">
-              <div className="text-6xl mb-4">📋</div>
+              <div className="text-6xl mb-4"></div>
               <p className="text-slate-500 text-lg font-medium">Заказы не найдены</p>
               <button onClick={clearFilters} className="mt-4 text-violet-600 font-semibold text-sm">
                 Сбросить фильтры
@@ -178,7 +178,7 @@ const JobsPage: React.FC = () => {
                           <div className="shrink-0 flex flex-row sm:flex-col items-center sm:items-end gap-4 sm:gap-2 sm:text-right">
                             <div>
                               <div className="flex items-center gap-1 text-violet-600 font-bold">
-                                <DollarSign size={14} />
+                                {/*<DollarSign size={14} />*/}
                                 {job.budget.toLocaleString()} ₽
                               </div>
                               <div className="flex items-center gap-1 text-xs text-slate-400 mt-0.5">

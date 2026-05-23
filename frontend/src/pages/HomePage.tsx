@@ -34,7 +34,7 @@ const ClientHome: React.FC = () => {
       <div className="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-3xl p-8 text-white shadow-2xl shadow-violet-200">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <h1 className="text-3xl font-extrabold mb-2">Добро пожаловать, {currentUser?.name}! 👋</h1>
+            <h1 className="text-3xl font-extrabold mb-2">Добро пожаловать, {currentUser?.name}!</h1>
             <p className="text-white/80">Найдите лучшего исполнителя для вашего проекта</p>
           </div>
           <div className="flex gap-3 flex-wrap">
@@ -65,9 +65,9 @@ const ClientHome: React.FC = () => {
           { label: 'Исполнители', value: users.filter(u => u.role === 'freelancer').length, icon: <Users className="text-amber-500" size={22} />, bg: 'bg-amber-50' },
         ].map((s) => (
           <Card key={s.label} className="!p-5">
-            <div className={`w-10 h-10 ${s.bg} rounded-xl flex items-center justify-center mb-3`}>
+            {/*<div className={`w-10 h-10 ${s.bg} rounded-xl flex items-center justify-center mb-3`}>
               {s.icon}
-            </div>
+            </div>*/}
             <div className="text-2xl font-extrabold text-slate-900">{s.value}</div>
             <div className="text-sm text-slate-500 mt-1">{s.label}</div>
           </Card>
@@ -161,7 +161,7 @@ const FreelancerHome: React.FC = () => {
       <div className="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-3xl p-8 text-white shadow-2xl shadow-violet-200">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
-            <h1 className="text-3xl font-extrabold mb-2">Привет, {currentUser?.name}! 🚀</h1>
+            <h1 className="text-3xl font-extrabold mb-2">Привет, {currentUser?.name}!</h1>
             <p className="text-white/80">Сегодня новые заказы ждут вас</p>
           </div>
           <div className="flex gap-3 flex-wrap">
@@ -191,9 +191,9 @@ const FreelancerHome: React.FC = () => {
           { label: 'Рейтинг', value: currentUser?.rating || '—', icon: <Star className="text-amber-500" size={22} />, bg: 'bg-amber-50' },
         ].map((s) => (
           <Card key={s.label} className="!p-5">
-            <div className={`w-10 h-10 ${s.bg} rounded-xl flex items-center justify-center mb-3`}>
+           {/*<div className={`w-10 h-10 ${s.bg} rounded-xl flex items-center justify-center mb-3`}>
               {s.icon}
-            </div>
+            </div>*/}
             <div className="text-2xl font-extrabold text-slate-900">{s.value}</div>
             <div className="text-sm text-slate-500 mt-1">{s.label}</div>
           </Card>
@@ -255,7 +255,7 @@ const FreelancerHome: React.FC = () => {
             </div>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-slate-600">
-                <CheckCircle size={14} className="text-emerald-500" />
+                {/*<CheckCircle size={14} className="text-emerald-500" />*/}
                 <span>Email подтверждён</span>
               </div>
               <div className="flex items-center gap-2 text-slate-600">

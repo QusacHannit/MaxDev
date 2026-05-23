@@ -100,9 +100,9 @@ const ProfilePage: React.FC = () => {
             <div className="text-center">
               <div className="relative inline-block mb-4">
                 <Avatar src={currentUser.avatar} alt={currentUser.name} size="xl" role={currentUser.role} className="!w-24 !h-24 !rounded-3xl ring-4 ring-violet-100 shadow-lg" />
-                <span className="absolute -bottom-1 -right-1 w-7 h-7 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center">
+                {/*<span className="absolute -bottom-1 -right-1 w-7 h-7 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center">
                   <CheckCircle size={14} className="text-white" />
-                </span>
+                </span>*/}
               </div>
               <h2 className="text-xl font-bold text-slate-900">{currentUser.name}</h2>
               <p className="text-sm text-slate-500 mt-1">{currentUser.email}</p>
@@ -165,7 +165,7 @@ const ProfilePage: React.FC = () => {
         <div className="lg:col-span-2 space-y-6">
           {saved && (
             <div className="flex items-center gap-2 p-4 bg-emerald-50 border border-emerald-100 rounded-xl text-emerald-700 text-sm font-medium">
-              <CheckCircle size={16} />
+              {/*<CheckCircle size={16} />*/}
               Изменения сохранены успешно!
             </div>
           )}
@@ -342,7 +342,7 @@ const ProfilePage: React.FC = () => {
             )}
 
             <Button type="submit" className="w-full" size="lg">
-              <Save size={18} />
+              {/*<Save size={18} />*/}
               Сохранить изменения
             </Button>
           </form>

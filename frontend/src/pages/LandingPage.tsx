@@ -75,7 +75,7 @@ const LandingPage: React.FC = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 text-sm font-medium mb-8 border border-white/20">
-            <Zap size={14} className="text-amber-400" />
+            {/*<Zap size={14} className="text-amber-400" />*/}
             Новая эра IT-фриланса в России
           </div>
 
@@ -134,9 +134,11 @@ const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-violet-200 transition-all duration-200">
+                {/*}
                 <div className={`w-14 h-14 ${f.bg} rounded-xl flex items-center justify-center mb-4`}>
                   {f.icon}
                 </div>
+                */}
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{f.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{f.desc}</p>
               </div>
@@ -221,7 +223,9 @@ const LandingPage: React.FC = () => {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-br from-violet-600 to-indigo-600 rounded-3xl p-12 shadow-2xl shadow-violet-200">
+            {/*
             <Code2 className="mx-auto mb-6 text-white/80" size={48} />
+            */}
             <h2 className="text-4xl font-extrabold text-white mb-4">
               Готовы начать?
             </h2>
@@ -233,14 +237,14 @@ const LandingPage: React.FC = () => {
                 to="/register?role=client"
                 className="flex items-center gap-2 px-8 py-4 bg-white text-violet-700 font-bold rounded-2xl hover:bg-violet-50 transition-all shadow-lg text-lg w-full sm:w-auto justify-center"
               >
-                <Search size={20} />
+                {/*<Search size={20} />*/}
                 Я заказчик
               </Link>
               <Link
                 to="/register?role=freelancer"
                 className="flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white/10 transition-all text-lg w-full sm:w-auto justify-center"
               >
-                <Code2 size={20} />
+                {/*<Code2 size={20} />*/}
                 Я фрилансер
               </Link>
             </div>
@@ -252,13 +256,14 @@ const LandingPage: React.FC = () => {
       <footer className="bg-slate-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/*
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <Code2 size={16} className="text-white" />
               </div>
               <span className="text-lg font-extrabold text-white">MaxDev</span>
             </div>
-
+            */}
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
               <a href="#" className="hover:text-white transition-colors">О платформе</a>
               <a href="#" className="hover:text-white transition-colors">Условия использования</a>

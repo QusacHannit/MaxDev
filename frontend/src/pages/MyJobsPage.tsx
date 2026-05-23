@@ -39,9 +39,9 @@ const ClientMyJobs: React.FC<{ initialTab?: 'active' | 'in_progress' | 'done' }>
 
   const myJobs = jobs.filter(j => j.clientId === currentUser?.id);
   const tabs: { key: typeof tab; label: string; icon: React.ReactNode; jobs: Job[] }[] = [
-    { key: 'active', label: 'Активные', icon: <Briefcase size={15} />, jobs: myJobs.filter(j => j.status === 'open') },
-    { key: 'in_progress', label: 'В работе', icon: <Clock size={15} />, jobs: myJobs.filter(j => j.status === 'in_progress' || j.status === 'done') },
-    { key: 'done', label: 'Завершённые', icon: <CheckCircle size={15} />, jobs: myJobs.filter(j => j.status === 'paid' || j.status === 'cancelled') },
+    { key: 'active', label: 'Активные', jobs: myJobs.filter(j => j.status === 'open') },
+    { key: 'in_progress', label: 'В работе', jobs: myJobs.filter(j => j.status === 'in_progress' || j.status === 'done') },
+    { key: 'done', label: 'Завершённые', jobs: myJobs.filter(j => j.status === 'paid' || j.status === 'cancelled') },
   ];
 
   const currentTabJobs = tabs.find(t => t.key === tab)?.jobs || [];
@@ -68,7 +68,7 @@ const ClientMyJobs: React.FC<{ initialTab?: 'active' | 'in_progress' | 'done' }>
 
       {currentTabJobs.length === 0 ? (
         <div className="text-center py-16">
-          <div className="text-5xl mb-4">📋</div>
+          <div className="text-5xl mb-4"></div>
           <p className="text-slate-500 font-medium">Нет заказов в этой категории</p>
           {tab === 'active' && (
             <Link to="/create-job" className="mt-4 inline-flex items-center gap-1 px-5 py-2.5 bg-violet-600 text-white font-semibold rounded-xl text-sm hover:bg-violet-700 transition-colors">
@@ -95,7 +95,7 @@ const ClientMyJobs: React.FC<{ initialTab?: 'active' | 'in_progress' | 'done' }>
 
                     <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600">
                       <span className="flex items-center gap-1 font-semibold text-violet-600">
-                        <DollarSign size={13} />
+                        {/*<DollarSign size={13} />*/}
                         {job.budget.toLocaleString()} ₽
                       </span>
                       <span className="text-slate-400">до {new Date(job.deadline).toLocaleDateString('ru-RU')}</span>
@@ -155,10 +155,10 @@ const FreelancerMyJobs: React.FC<{ initialTab?: Tab }> = ({ initialTab = 'applic
   const completedJobs = jobs.filter(j => j.freelancerId === currentUser?.id && j.status === 'paid');
 
   const tabs: { key: Tab; label: string; icon: React.ReactNode; jobs: Job[] }[] = [
-    { key: 'applications', label: 'Мои отклики', icon: <MessageSquare size={15} />, jobs: myApplicationJobs },
-    { key: 'offered', label: 'Предложенные', icon: <Briefcase size={15} />, jobs: offeredJobs },
-    { key: 'active', label: 'В работе', icon: <Clock size={15} />, jobs: activeJobs },
-    { key: 'completed', label: 'Завершённые', icon: <CheckCircle size={15} />, jobs: completedJobs },
+    { key: 'applications', label: 'Мои отклики', jobs: myApplicationJobs },
+    { key: 'offered', label: 'Предложенные', jobs: offeredJobs },
+    { key: 'active', label: 'В работе', jobs: activeJobs },
+    { key: 'completed', label: 'Завершённые', jobs: completedJobs },
   ];
 
   const currentTabJobs = tabs.find(t => t.key === tab)?.jobs || [];
@@ -185,7 +185,7 @@ const FreelancerMyJobs: React.FC<{ initialTab?: Tab }> = ({ initialTab = 'applic
 
       {currentTabJobs.length === 0 ? (
         <div className="text-center py-16">
-          <div className="text-5xl mb-4">📋</div>
+          <div className="text-5xl mb-4"></div>
           <p className="text-slate-500 font-medium">
             {tab === 'offered' ? 'Нет предложенных заказов' : 'Нет данных в этой категории'}
           </p>
@@ -218,7 +218,7 @@ const FreelancerMyJobs: React.FC<{ initialTab?: Tab }> = ({ initialTab = 'applic
 
                     <div className="flex flex-wrap items-center gap-4 text-sm">
                       <span className="flex items-center gap-1 font-semibold text-violet-600">
-                        <DollarSign size={13} />
+                        {/*<DollarSign size={13} />*/}
                         {job.budget.toLocaleString()} ₽
                       </span>
                       <span className="text-slate-400">до {new Date(job.deadline).toLocaleDateString('ru-RU')}</span>

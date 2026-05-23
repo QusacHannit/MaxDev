@@ -190,7 +190,7 @@ const FreelancersPage: React.FC = () => {
 
           {paginated.length === 0 ? (
             <div className="text-center py-20">
-              <div className="text-slate-300 text-6xl mb-4">🔍</div>
+              <div className="text-slate-300 text-6xl mb-4"></div>
               <p className="text-slate-500 text-lg font-medium">Специалисты не найдены</p>
               <p className="text-slate-400 text-sm mt-2">Попробуйте изменить параметры поиска</p>
               <button onClick={clearFilters} className="mt-4 text-violet-600 font-semibold text-sm hover:text-violet-700">

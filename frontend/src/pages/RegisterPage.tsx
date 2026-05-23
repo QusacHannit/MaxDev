@@ -138,11 +138,14 @@ const RegisterPage: React.FC = () => {
 
       <div className={`w-full max-w-md rounded-2xl p-8 ${card}`}>
         {/* логотип */}
+        
         <div className="text-center mb-6">
+          {/*
           <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600
                           rounded-2xl flex items-center justify-center mx-auto mb-3">
             <Code2 size={28} className="text-white" />
           </div>
+          */}
           <h1 className="text-2xl font-bold">Регистрация в MaxDev</h1>
           <p className={`text-sm mt-1 ${lbl}`}>
             {step === 'form' ? 'Создайте аккаунт разработчика' : `Введите код из письма на ${email}`}

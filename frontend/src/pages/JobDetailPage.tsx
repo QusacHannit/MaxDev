@@ -15,10 +15,10 @@ import Textarea from '../components/ui/Textarea';
 import { Avatar } from '../components/ui/Avatar';
 
 const STATUS_MAP: Record<string, { label: string; variant: 'success' | 'info' | 'warning' | 'violet' | 'danger' | 'default'; icon: React.ReactNode }> = {
-  open: { label: 'Открыт', variant: 'success', icon: <CheckCircle size={14} /> },
-  in_progress: { label: 'В работе', variant: 'info', icon: <Clock size={14} /> },
+  open: { label: 'Открыт', variant: 'success'},
+  in_progress: { label: 'В работе', variant: 'info',},
   done: { label: 'Ожидает приёмки', variant: 'warning', icon: <AlertTriangle size={14} /> },
-  paid: { label: 'Оплачено', variant: 'violet', icon: <CheckCircle size={14} /> },
+  paid: { label: 'Оплачено', variant: 'violet'},
   cancelled: { label: 'Отменён', variant: 'danger', icon: <AlertTriangle size={14} /> },
 };
 
@@ -219,7 +219,7 @@ const JobDetailPage: React.FC = () => {
                 activeTab === 'info' ? 'bg-white text-violet-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
               }`}
             >
-              <CheckCircle size={15} /> Информация
+              {/*<CheckCircle size={15} />*/} Информация
             </button>
             {showChatTab ? (
               <button
@@ -228,11 +228,11 @@ const JobDetailPage: React.FC = () => {
                   activeTab === 'chat' ? 'bg-white text-violet-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
-                <MessageSquare size={15} /> Чат
+                {/*<MessageSquare size={15} />*/} Чат
               </button>
             ) : (
               <div className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-sm font-semibold text-slate-300 cursor-not-allowed">
-                <MessageSquare size={15} /> Чат
+                {/*<MessageSquare size={15} />*/} Чат
               </div>
             )}
           </div>
@@ -258,18 +258,18 @@ const JobDetailPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100">
                   <div className="flex items-center gap-2">
-                    <div className="w-9 h-9 bg-violet-50 rounded-xl flex items-center justify-center">
+                    {/*<div className="w-9 h-9 bg-violet-50 rounded-xl flex items-center justify-center">
                       <DollarSign size={16} className="text-violet-600" />
-                    </div>
+                    </div>*/}
                     <div>
                       <p className="text-xs text-slate-400">Бюджет</p>
                       <p className="font-bold text-slate-900">{job.budget.toLocaleString()} ₽</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-9 h-9 bg-sky-50 rounded-xl flex items-center justify-center">
+                    {/*<div className="w-9 h-9 bg-sky-50 rounded-xl flex items-center justify-center">
                       <Calendar size={16} className="text-sky-600" />
-                    </div>
+                    </div>*/}
                     <div>
                       <p className="text-xs text-slate-400">Срок</p>
                       <p className="font-bold text-slate-900">
@@ -278,9 +278,9 @@ const JobDetailPage: React.FC = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-9 h-9 bg-emerald-50 rounded-xl flex items-center justify-center">
+                    {/*<div className="w-9 h-9 bg-emerald-50 rounded-xl flex items-center justify-center">
                       <Clock size={16} className="text-emerald-600" />
-                    </div>
+                    </div>*/}
                     <div>
                       <p className="text-xs text-slate-400">Осталось</p>
                       <p className={`font-bold ${daysLeft < 0 ? 'text-red-600' : 'text-slate-900'}`}>
@@ -462,7 +462,7 @@ const JobDetailPage: React.FC = () => {
                 )}
                 {job.status === 'paid' && hasReviewed && (
                   <div className="p-3 bg-emerald-50 border border-emerald-100 rounded-xl text-sm text-emerald-700 text-center">
-                    ✅ Отзыв оставлен. Спасибо!
+                    Отзыв оставлен. Спасибо!
                   </div>
                 )}
               </div>
@@ -477,7 +477,7 @@ const JobDetailPage: React.FC = () => {
                 {job.status === 'in_progress' && (
                   <>
                     <Button className="w-full" variant="success" onClick={handleMarkDone} loading={markingDone}>
-                      <CheckCircle size={16} />
+                      {/*<CheckCircle size={16} />*/}
                       Сдать работу
                     </Button>
                     <p className="text-xs text-slate-400 text-center">После сдачи клиент проверит результат</p>
@@ -540,7 +540,7 @@ const JobDetailPage: React.FC = () => {
           {alreadyApplied && currentUser?.role === 'freelancer' && !isFreelancer && !isOfferedToCurrentFreelancer && (
             <Card>
               <div className="text-center">
-                <CheckCircle className="mx-auto text-emerald-500 mb-2" size={28} />
+                {/*<CheckCircle className="mx-auto text-emerald-500 mb-2" size={28} />*/}
                 <p className="font-semibold text-slate-900">Вы откликнулись</p>
                 <p className="text-sm text-slate-500 mt-1">Ожидайте решения клиента</p>
               </div>
