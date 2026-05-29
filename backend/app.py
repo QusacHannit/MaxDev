@@ -369,7 +369,7 @@ def block_user(user_id):
     add_log('BLOCK', current_user_id, f"Blocked {user.name}: {user.block_reason}")
     return jsonify(user.to_dict())
 
-@app.route('/api/users/<int:user_id>/unblock', methods=['POST'])
+@app.route('/api/users/<int:user_id>/unblock', methods(['POST'])
 @jwt_required()
 def unblock_user(user_id):
     current_user_id = int(get_jwt_identity())
@@ -998,7 +998,7 @@ def import_backup():
     add_log('BACKUP_IMPORT', current_user_id, "Imported backup")
     return jsonify({'message': 'Database restored'})
 
-@app.route('/api/admin/reset', methods(['POST'])
+@app.route('/api/admin/reset', methods=['POST'])
 @jwt_required()
 def reset_database():
     current_user_id = int(get_jwt_identity())
