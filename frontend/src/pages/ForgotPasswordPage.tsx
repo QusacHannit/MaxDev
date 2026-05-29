@@ -252,8 +252,8 @@ export const ForgotPasswordPage: React.FC = () => {
         {/* STEP 4: done */}
         {step === 'done' && (
           <div className="text-center space-y-4">
-            <CheckCircle size={48} className="text-green-500 mx-auto" />
-            <p className="font-medium">Пароль успешно изменён!</p>
+            {/*<CheckCircle size={48} className="text-green-500 mx-auto" />*/}
+
             <p className={`text-sm ${label}`}>Теперь вы можете войти с новым паролем.</p>
             <button
               onClick={() => navigate('/login')}
