@@ -30,6 +30,8 @@ const RegisterPage: React.FC = () => {
   const [confirm,     setConfirm]     = useState('');
   // верификация
   const [code,        setCode]        = useState('');
+  // согласие
+  const [agreed,      setAgreed]      = useState(false);
 
   const [resendTimer, setResendTimer] = useState(0);
   // UI
@@ -45,6 +47,7 @@ const RegisterPage: React.FC = () => {
     if (!/\S+@\S+\.\S+/.test(email.trim()))      { setError('Некорректный email');                  return; }
     if (password.length < 6)                      { setError('Пароль должен быть не менее 6 символов'); return; }
     if (password !== confirm)                     { setError('Пароли не совпадают');                 return; }
+    if (!agreed)                                  { setError('Необходимо согласиться с условиями');  return; }
 
     setLoading(true);
     try {
@@ -137,15 +140,7 @@ const RegisterPage: React.FC = () => {
       </button>
 
       <div className={`w-full max-w-md rounded-2xl p-8 ${card}`}>
-        {/* логотип */}
-        
         <div className="text-center mb-6">
-          {/*
-          <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600
-                          rounded-2xl flex items-center justify-center mx-auto mb-3">
-            <Code2 size={28} className="text-white" />
-          </div>
-          */}
           <h1 className="text-2xl font-bold">Регистрация в MaxDev</h1>
           <p className={`text-sm mt-1 ${lbl}`}>
             {step === 'form' ? 'Создайте аккаунт разработчика' : `Введите код из письма на ${email}`}
@@ -216,6 +211,27 @@ const RegisterPage: React.FC = () => {
                   className={`w-full pl-9 pr-4 py-2.5 rounded-lg border text-sm outline-none transition-colors ${inp}`}
                 />
               </div>
+            </div>
+
+            {/* согласие с условиями */}
+            <div className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                id="agree-terms"
+                checked={agreed}
+                onChange={e => setAgreed(e.target.checked)}
+                className="mt-1 w-4 h-4 accent-purple-600"
+              />
+              <label htmlFor="agree-terms" className={`text-xs ${lbl}`}>
+                Я соглашаюсь на{' '}
+                <a href="/terms" target="_blank" className="text-purple-500 hover:underline">
+                  обработку персональных данных
+                </a>{' '}
+                и принимаю{' '}
+                <a href="/terms" target="_blank" className="text-purple-500 hover:underline">
+                  условия пользовательского соглашения
+                </a>
+              </label>
             </div>
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
